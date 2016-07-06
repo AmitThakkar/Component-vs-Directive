@@ -12,14 +12,14 @@ import {EventEmitter} from "@angular/common/src/facade/async";
     }
 })
 export class EnterDirective {
-    @Output() onEnter = new EventEmitter<any>();
+    @Output() enter = new EventEmitter<any>();
 
     constructor() {
     }
 
     enterHandler(event) {
         if (event.keyCode == 13) {
-            this.onEnter.emit(event);
+            this.enter.emit(event);
         }
     }
 }

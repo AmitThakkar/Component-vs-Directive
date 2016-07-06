@@ -9,7 +9,7 @@ import {EnterDirective} from "./sample.directive";
     template: `
        <strong>Hello World</strong> form <strong>{{name}} Component</strong>!
        <br/>
-       <input type="text" enter (onEnter)="enterHandler($event)" >
+       <input type="text" (enter)="enterHandler($event)" >
     `,
     directives: <any>[EnterDirective]
 })
