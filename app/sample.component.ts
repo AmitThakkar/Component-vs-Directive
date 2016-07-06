@@ -9,10 +9,14 @@ import {EnterDirective} from "./sample.directive";
     template: `
        <strong>Hello World</strong> form <strong>{{name}} Component</strong>!
        <br/>
-       <input type="text" enter>
+       <input type="text" enter (onEnter)="enterHandler($event)" >
     `,
     directives: <any>[EnterDirective]
 })
 export class SampleComponent {
     name:string = 'Sample';
+
+    enterHandler(event) {
+        console.log(event);
+    }
 }

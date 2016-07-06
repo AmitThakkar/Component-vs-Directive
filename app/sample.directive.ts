@@ -2,7 +2,8 @@
  * Created by amitthakkar on 05/07/16.
  */
 
-import {Directive} from "@angular/core";
+import {Directive, Output} from "@angular/core";
+import {EventEmitter} from "@angular/common/src/facade/async";
 
 @Directive({
     selector: '[enter]',
@@ -11,12 +12,14 @@ import {Directive} from "@angular/core";
     }
 })
 export class EnterDirective {
+    @Output() onEnter = new EventEmitter<any>();
+
     constructor() {
     }
 
     enterHandler(event) {
         if (event.keyCode == 13) {
-            console.log('Enter pressed');
+            this.onEnter.emit(event);
         }
     }
 }
