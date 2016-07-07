@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Component v/s Directive by AmitThakkar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Component v/s Directive</h1>
+      <h2 class="project-tagline">This blog explain difference between Component and Directive in Angular2</h2>
+      <a href="https://github.com/AmitThakkar/Component-vs-Directive" class="btn">View on GitHub</a>
+      <a href="https://github.com/AmitThakkar/Component-vs-Directive/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/AmitThakkar/Component-vs-Directive/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="component-vs-directive" class="anchor" href="#component-vs-directive" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Component v/s Directive</h1>
+
+<p>This blog explain difference between Component and Directive in Angular2.</p>
+
+<p>In <strong>Angular1</strong> we used to <strong>directive</strong> for below reasons:
+1. To add behavior to an existing DOM element.
+2. To create a reusable component.</p>
+
+<p><strong>Angular2</strong> have introduced two different meta-data annotation for these, <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> is used to add behaviour to a element, 
+while <strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> is used to create reusable component. Lets have a look below points for more details:</p>
+
+<ol>
+<li><p>We create <strong>Component</strong> with the help of <strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> meta-data annotation while We create <strong>Directive</strong> with the help of 
+<strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> meta-data annotation.</p></li>
+<li><p><strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> requires a view while <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> does not.</p></li>
+<li><p><strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> is used to create reusable components while <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> is used to add behavior to an existing DOM element.</p></li>
+<li><p>Multiple <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> can be mark on single DOM element while <strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> represent a DOM element.</p></li>
+<li>
+<li>
+<p>Example:</p>
+
+<h2>
+<a id="component" class="anchor" href="#component" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong>
+</h2>
+
+<div class="highlight highlight-source-ts"><pre><span class="pl-k">import</span> {Component} <span class="pl-k">from</span> <span class="pl-s">'@angular/core'</span>;
+<span class="pl-k">import</span> {EnterDirective} <span class="pl-k">from</span> <span class="pl-s">"./sample.directive"</span>;
+
+@Component({
+    selector: <span class="pl-s">'sample-component'</span>,
+    template: <span class="pl-s">`</span>
+<span class="pl-s">       &lt;strong&gt;Hello World&lt;/strong&gt; form &lt;strong&gt;{{name}} Component&lt;/strong&gt;!</span>
+<span class="pl-s">       &lt;br/&gt;</span>
+<span class="pl-s">       &lt;input type="text" (enter)="enterHandler($event)" &gt;</span>
+<span class="pl-s">    `</span>,
+    directives: &lt;<span class="pl-k">any</span>&gt;[EnterDirective]
+})
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">SampleComponent</span> {
+    <span class="pl-v">name</span>:<span class="pl-k">string</span> <span class="pl-k">=</span> <span class="pl-s">'Sample'</span>;
+
+    <span class="pl-en">enterHandler</span>(<span class="pl-v">event</span>) {
+        console.log(event);
+    }
+}</pre></div>
+
+<h2>
+<a id="directive" class="anchor" href="#directive" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong>
+</h2>
+
+<div class="highlight highlight-source-ts"><pre><span class="pl-k">import</span> {Directive, Output} <span class="pl-k">from</span> <span class="pl-s">"@angular/core"</span>;
+<span class="pl-k">import</span> {EventEmitter} <span class="pl-k">from</span> <span class="pl-s">"@angular/common/src/facade/async"</span>;
+
+@Directive({
+    selector: <span class="pl-s">'[enter]'</span>,
+    host: {
+        <span class="pl-s">'(keypress)'</span>: <span class="pl-s">'enterHandler($event)'</span>
+    }
+})
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">EnterDirective</span> {
+    @<span class="pl-en">Output</span>() enter = new <span class="pl-en">EventEmitter</span>&lt;<span class="pl-k">any</span>&gt;();
+
+    <span class="pl-en">constructor</span>() {
+    }
+
+    <span class="pl-en">enterHandler</span>(<span class="pl-v">event</span>) {
+        <span class="pl-k">if</span> (event.keyCode <span class="pl-k">==</span> <span class="pl-c1">13</span>) {
+            <span class="pl-c1">this</span>.enter.emit(event);
+        }
+    }
+}</pre></div>
+</li>
+</ol>
+
+<h2>
+<a id="follow-me" class="anchor" href="#follow-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Follow Me</h2>
+
+<p><a href="https://github.com/AmitThakkar">Github</a></p>
+
+<p><a href="https://twitter.com/amit_thakkar01">Twitter</a></p>
+
+<p><a href="https://in.linkedin.com/in/amitthakkar01">LinkedIn</a></p>
+
+<p><a href="http://amitthakkar.github.io/">More Blogs By Me</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/AmitThakkar/Component-vs-Directive">Component v/s Directive</a> is maintained by <a href="https://github.com/AmitThakkar">AmitThakkar</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
