@@ -2,26 +2,29 @@
 
 This blog explain difference between Component and Directive in Angular2.
 
-In **Angular1** we used to **directive** for below reasons:
+In **Angular1** we use **directive** for below reasons:
 1. To add behavior to an existing DOM element.
 2. To create a reusable component.
 
-**Angular2** have introduced two different meta-data annotation for these, **@Directive** is used to add behaviour to a element, 
-while **@Component** is used to create reusable component. Lets have a look below points for more details:
+**Angular2** have introduced two different meta-data annotation for these, **@Directive** is used to add behaviour to an existing
+element, while **@Component** is used to create reusable component. For more difference and example have a look below points:
 
 1. We create **Component** with the help of **@Component** meta-data annotation while We create **Directive** with the help of 
-**@Directive** meta-data annotation.
+    **@Directive** meta-data annotation.
 
-2. **@Component** requires a view while **@Directive** does not.
+2. **@Component** is used to create new **view(shadow DOM)** with attached behaviour while **@Directive** is used to add behavior 
+    to an existing DOM element.
 
-3. **@Component** is used to create reusable components while **@Directive** is used to add behavior to an existing DOM element.
+3. With the help of **@Component** we can break our application into small-2 components, and can do component base development
+    while with the help of **@Directive** we can attached different-2 behaviours to an existing DOM element or different-2 
+    existing DOM element.
 
-4. Multiple **@Directive** can be mark on single DOM element while **@Component** represent a DOM element.
+4. **@Component** is used to create reusable components while **@Directive** is used to create reusable behaviour.
 
-5. 
+5. **@Component** requires a view via **@View** or **template/url** while **@Directive** does not.
+    > **@View** or **template/url** is mandatory in the component.
 
 6. Example:
-
     **@Component**
     ---
     
