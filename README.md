@@ -3,11 +3,13 @@
 This blog explain difference between Component and Directive in Angular2.
 
 In **Angular1** we use **directive** for below reasons:
-1. To add behavior to an existing DOM element.
-2. To create a reusable component.
 
-**Angular2** have introduced two different meta-data annotation for these, **@Directive** is used to add behaviour to an existing
-element, while **@Component** is used to create reusable component. For more difference and example have a look below points:
+1. To add behavior to an existing DOM element.
+2. To create a component with attached behaviour.
+
+**Angular2** have introduced two different meta-data annotation for these, First is, **@Directive** which is used to add behaviour 
+to an existing element. Second is, **@Component** which is used to create a component with attached behaviour. For more difference 
+and example have a look below points:
 
 1. We create **Component** with the help of **@Component** meta-data annotation while We create **Directive** with the help of 
     **@Directive** meta-data annotation.
