@@ -16,54 +16,63 @@ while **@Component** is used to create reusable component. Lets have a look belo
 
 3. **@Component** is used to create reusable components while **@Directive** is used to add behavior to an existing DOM element.
 
+4. Multiple **@Directive** can be mark on single DOM element while **@Component** represent a DOM element.
+
+5. 
+
 6. Example:
 
-
-```TypeScript
-import {Component} from '@angular/core';
-import {EnterDirective} from "./sample.directive";
-
-@Component({
-    selector: 'sample-component',
-    template: `
-       <strong>Hello World</strong> form <strong>{{name}} Component</strong>!
-       <br/>
-       <input type="text" (enter)="enterHandler($event)" >
-    `,
-    directives: <any>[EnterDirective]
-})
-export class SampleComponent {
-    name:string = 'Sample';
-
-    enterHandler(event) {
-        console.log(event);
-    }
-}
-```
-
-```TypeScript
-import {Directive, Output} from "@angular/core";
-import {EventEmitter} from "@angular/common/src/facade/async";
-
-@Directive({
-    selector: '[enter]',
-    host: {
-        '(keypress)': 'enterHandler($event)'
-    }
-})
-export class EnterDirective {
-    @Output() enter = new EventEmitter<any>();
-
-    constructor() {
-    }
-
-    enterHandler(event) {
-        if (event.keyCode == 13) {
-            this.enter.emit(event);
+    **@Component**
+    ---
+    
+    ```TypeScript
+    import {Component} from '@angular/core';
+    import {EnterDirective} from "./sample.directive";
+    
+    @Component({
+        selector: 'sample-component',
+        template: `
+           <strong>Hello World</strong> form <strong>{{name}} Component</strong>!
+           <br/>
+           <input type="text" (enter)="enterHandler($event)" >
+        `,
+        directives: <any>[EnterDirective]
+    })
+    export class SampleComponent {
+        name:string = 'Sample';
+    
+        enterHandler(event) {
+            console.log(event);
         }
     }
-}
-```
+    ```
+    
+    **@Directive**
+    ---
+    
+    ```TypeScript
+    import {Directive, Output} from "@angular/core";
+    import {EventEmitter} from "@angular/common/src/facade/async";
+    
+    @Directive({
+        selector: '[enter]',
+        host: {
+            '(keypress)': 'enterHandler($event)'
+        }
+    })
+    export class EnterDirective {
+        @Output() enter = new EventEmitter<any>();
+    
+        constructor() {
+        }
+    
+        enterHandler(event) {
+            if (event.keyCode == 13) {
+                this.enter.emit(event);
+            }
+        }
+    }
+    ```
 
 
 Follow Me
