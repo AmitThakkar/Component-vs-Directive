@@ -22,22 +22,35 @@
       <h1>
 <a id="component-vs-directive" class="anchor" href="#component-vs-directive" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Component v/s Directive</h1>
 
-<p>This blog explain difference between Component and Directive in Angular2.</p>
+<p>This blog explain difference between Component and Directive in <strong>Angular2</strong>.</p>
 
-<p>In <strong>Angular1</strong> we used to <strong>directive</strong> for below reasons:
-1. To add behavior to an existing DOM element.
-2. To create a reusable component.</p>
-
-<p><strong>Angular2</strong> have introduced two different meta-data annotation for these, <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> is used to add behaviour to a element, 
-while <strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> is used to create reusable component. Lets have a look below points for more details:</p>
+<p>In <strong>Angular1</strong> we use <strong>directive</strong> for below reasons:</p>
 
 <ol>
-<li><p>We create <strong>Component</strong> with the help of <strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> meta-data annotation while We create <strong>Directive</strong> with the help of 
+<li>To add behavior to an existing DOM element.</li>
+<li>To create a component with attached behaviour.</li>
+</ol>
+
+<p><strong>Angular2</strong> have introduced two different meta-data annotation for these, First is <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong>, which is used to add behaviour 
+to an existing element. Second is <strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong>, which is used to create a component with attached behaviour. For more difference 
+and example have a look below points:</p>
+
+<ol>
+<li><p>We create <strong>Component</strong> with the help of <strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> meta-data annotation while we create <strong>Directive</strong> with the help of 
 <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> meta-data annotation.</p></li>
-<li><p><strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> requires a view while <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> does not.</p></li>
-<li><p><strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> is used to create reusable components while <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> is used to add behavior to an existing DOM element.</p></li>
-<li><p>Multiple <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> can be mark on single DOM element while <strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> represent a DOM element.</p></li>
+<li><p><strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> is used to create new <strong>View(Shadow DOM)</strong> with attached behaviour while <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> is used to add behavior 
+to an existing DOM element.</p></li>
+<li><p>With the help of <strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> we can break our application into small-2 components, and can do component base development
+while with the help of <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> we can attached different-2 behaviours to an existing DOM element or different-2 
+existing DOM element.</p></li>
+<li><p><strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> is used to create reusable components while <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> is used to create reusable behaviour.</p></li>
 <li>
+<p><strong><a href="https://github.com/Component" class="user-mention">@Component</a></strong> requires a view via <strong><a href="https://github.com/View" class="user-mention">@View</a></strong> or <strong>template/url</strong> while <strong><a href="https://github.com/Directive" class="user-mention">@Directive</a></strong> does not.</p>
+
+<blockquote>
+<p><strong><a href="https://github.com/View" class="user-mention">@View</a></strong> or <strong>template/url</strong> is mandatory in the component.</p>
+</blockquote>
+</li>
 <li>
 <p>Example:</p>
 
