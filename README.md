@@ -79,6 +79,7 @@ and example have a look below points:
     }
     ```
 
+> Communication between **Component** and **Directive** can be same way as we do between two **Components**. 
 
 Follow Me
 ---
