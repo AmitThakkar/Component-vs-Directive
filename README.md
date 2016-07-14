@@ -1,15 +1,15 @@
 # Component v/s Directive
 
-This blog explain difference between Component and Directive in **Angular2**.
+This blog explains difference between Component and Directive in **Angular2**.
 
-In **Angular1** we use **directive** for below reasons:
+In **Angular1.X** we use **directive** for below reasons:
 
 1. To add behavior to an existing DOM element.
 2. To create a component with attached behaviour.
 
-**Angular2** have introduced two different meta-data annotation for these, First is **@Directive**, which is used to add behaviour 
-to an existing element. Second is **@Component**, which is used to create a component with attached behaviour. For more difference 
-and example have a look below points:
+**Angular2** has introduced two different meta-data annotation for these, first is **@Directive**, which is used to add behaviour 
+to an existing element. Second is **@Component**, which is used to create a component with attached behaviour. For more differences 
+and examples have a look at the points below:
 
 1. We create **Component** with the help of **@Component** meta-data annotation while we create **Directive** with the help of 
     **@Directive** meta-data annotation.
@@ -17,9 +17,9 @@ and example have a look below points:
 2. **@Component** is used to create new **View(Shadow DOM)** with attached behaviour while **@Directive** is used to add behavior 
     to an existing DOM element.
 
-3. With the help of **@Component** we can break our application into small-2 components, and can do component base development
-    while with the help of **@Directive** we can attached different-2 behaviours to an existing DOM element or different-2 
-    existing DOM element.
+3. With the help of **@Component** we can break our application into smaller components, and can do component based development
+   while with the help of **@Directive** we can attach different behaviours to an existing DOM element or different 
+   existing DOM element.
 
 4. **@Component** is used to create reusable components while **@Directive** is used to create reusable behaviour.
 
@@ -79,7 +79,7 @@ and example have a look below points:
     }
     ```
 
-> Communication between **Component** and **Directive** can be same way as we do between two **Components**. 
+> Communication between **Component** and **Directive** can be done same way as we do between two **Components**. 
 
 Follow Me
 ---
