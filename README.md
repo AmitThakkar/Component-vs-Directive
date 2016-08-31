@@ -89,4 +89,4 @@ Follow Me
 
 [LinkedIn](https://in.linkedin.com/in/amitthakkar01)
 
-[More Blogs By Me](http://amitthakkar.github.io/)
+[More Blogs By Me](https://amitthakkar.github.io/)
