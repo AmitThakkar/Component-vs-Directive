@@ -68,10 +68,10 @@ existing DOM element.</p></li>
 <span class="pl-s">       &lt;br/&gt;</span>
 <span class="pl-s">       &lt;input type="text" (enter)="enterHandler($event)" &gt;</span>
 <span class="pl-s">    `</span>,
-    directives: &lt;<span class="pl-k">any</span>&gt;[EnterDirective]
+    directives: &lt;<span class="pl-c1">any</span>&gt;[EnterDirective]
 })
 <span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">SampleComponent</span> {
-    <span class="pl-v">name</span>:<span class="pl-k">string</span> <span class="pl-k">=</span> <span class="pl-s">'Sample'</span>;
+    <span class="pl-v">name</span>:<span class="pl-c1">string</span> <span class="pl-k">=</span> <span class="pl-s">'Sample'</span>;
 
     <span class="pl-en">enterHandler</span>(<span class="pl-v">event</span>) {
         console.log(event);
@@ -92,9 +92,9 @@ existing DOM element.</p></li>
     }
 })
 <span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">EnterDirective</span> {
-    @<span class="pl-en">Output</span>() enter = new <span class="pl-en">EventEmitter</span>&lt;<span class="pl-k">any</span>&gt;();
+    @<span class="pl-en">Output</span>() enter = new <span class="pl-en">EventEmitter</span>&lt;<span class="pl-c1">any</span>&gt;();
 
-    <span class="pl-en">constructor</span>() {
+    <span class="pl-k">constructor</span>() {
     }
 
     <span class="pl-en">enterHandler</span>(<span class="pl-v">event</span>) {
@@ -119,7 +119,7 @@ existing DOM element.</p></li>
 
 <p><a href="https://in.linkedin.com/in/amitthakkar01">LinkedIn</a></p>
 
-<p><a href="http://amitthakkar.github.io/">More Blogs By Me</a></p>
+<p><a href="https://amitthakkar.github.io/">More Blogs By Me</a></p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/AmitThakkar/Component-vs-Directive">Component v/s Directive</a> is maintained by <a href="https://github.com/AmitThakkar">AmitThakkar</a>.</span>
